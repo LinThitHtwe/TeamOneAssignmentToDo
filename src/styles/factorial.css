@@ -1,0 +1,56 @@
+.main {
+  padding: 2rem 5rem;
+}
+.center {
+  text-align: center;
+}
+.mb-1 {
+  margin-bottom: 2rem;
+}
+
+.mb {
+  margin-bottom: 0.5rem;
+}
+.mt {
+  margin-top: 1rem;
+}
+
+.rowFact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rowFact div input {
+  border: 2px solid #888888;
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 5px;
+}
+.rowFact input.primary {
+  color: white;
+  background: rgb(0, 162, 255);
+  border: 0;
+  width: 130px;
+  margin-left: .5rem;
+}
+.rowFact input.primary:hover {
+  color: white;
+  background: rgb(0, 38, 255);
+  border: 0;
+  border: 0;
+  width: 130px;
+}
+.rowFact input {
+  border: 2px solid #888888;
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 5px;
+}
+.widthFact {
+  height: 100px;
+  width: 305px;
+}
+.mt-1 {
+  margin-top: 2rem;
+}
