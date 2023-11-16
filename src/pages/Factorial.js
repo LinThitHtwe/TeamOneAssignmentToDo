@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import factorial from '../styles/factorial.css'
 
 const Factorial = () => {
 
@@ -32,7 +33,7 @@ const Factorial = () => {
         </div>
         <form id="factorialForm" onSubmit={calculateFactorial}>
           <div className="rowFact">
-            <div>
+            
               <input
                 type="number"
                 id="number"
@@ -41,7 +42,7 @@ const Factorial = () => {
                 onChange={(e) => setNumber(e.target.value)}
               />
               <input type="submit" value="Submit" className="primary" />
-            </div>
+            
           </div>
           <div className="rowFact mt-1">
             <div>
