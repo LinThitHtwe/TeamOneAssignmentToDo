@@ -28,8 +28,8 @@ function App() {
   const [isValid, setValid] = useState(null);
 
   const validateUserHandler = (email, password) => {
-  const users = JSON.parse(localStorage.getItem("USER_DB"));
-  let isValided = false;
+    const users = JSON.parse(localStorage.getItem("USER_DB"));
+    let isValided = false;
 
     users.forEach((user) => {
       if (user.email === email && user.password === password) {
