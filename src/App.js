@@ -2,8 +2,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import Factorial from "./pages/Factorial";
 import ToDo from "./pages/ToDo";
+import EvenOdd from './pages/EvenOdd';
 import Navbar from "./components/Navbar";
 import { useState } from "react";
+
 
 function App() {
   const [activeComponent, setActiveComponent] = useState("ToDo");
@@ -13,6 +15,9 @@ function App() {
   };
 
   return (
+
+    
+
     <>
       <Navbar
         onNavbarClick={handleNavbarClick}
@@ -20,8 +25,10 @@ function App() {
       />
       {activeComponent === "ToDo" && <ToDo />}
       {activeComponent === "Factorial" && <Factorial />}
+       {activeComponent === "EvenOdd" &&   <EvenOdd/>}
     </>
   );
+  
 }
 
 export default App;
