@@ -127,7 +127,7 @@ const ToDo = () => {
               </li>
             ))
           ) : (
-            <li>No to do list to show</li>
+            <li className="no-todo-list">No to do list to show</li>
           )}
         </ul>
       </div>

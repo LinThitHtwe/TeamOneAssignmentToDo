@@ -14,9 +14,9 @@ const Navbar = ({ onNavbarClick, activeComponent }) => {
         </span>
         <span
           className={`navbar-item ${
-            activeComponent === "Number" ? "active" : ""
+            activeComponent === "EvenOdd" ? "active" : ""
           }`}
-          onClick={() => onNavbarClick("Number")}
+          onClick={() => onNavbarClick("EvenOdd")}
         >
           Number
         </span>
