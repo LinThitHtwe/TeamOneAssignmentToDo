@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Login from "./pages/Login";
 import Factorial from "./pages/Factorial";
@@ -34,6 +33,10 @@ function App() {
     users.forEach((user) => {
       if (user.email === email && user.password === password) {
         isValided = true;
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({ email: user.email, password: user.password })
+        );
         return;
       }
     });

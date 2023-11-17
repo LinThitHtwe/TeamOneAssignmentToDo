@@ -12,9 +12,9 @@
     --textColor: rgb(197, 197, 197);
 }
 
-body {
+/* body {
     background: var(--primary);
-}
+} */
 
 .login-container {
     width: 100vw;
@@ -38,7 +38,7 @@ body {
     width: 400px;
 }
 
-form {
+#login-form {
     width: 300px;
     padding: 1.5rem;
     border-radius: 0.25rem;
@@ -46,22 +46,22 @@ form {
     color: var(--textColor);
 }
 
-form h2 {
+#login-form h2 {
     text-align: center;
     margin: 20px 0;
 }
 
-form div {
+#login-form div {
     margin-bottom: 1.5rem;
 }
 
-form div input,
+#login-form div input,
 label {
     display: block;
     width: 100%;
 }
 
-form div input {
+#login-form div input {
     height: 25px;
     background: transparent;
     border: 1px solid white;
@@ -69,15 +69,16 @@ form div input {
     color: #fff;
 }
 
-#remember-me-con,
+#login-form #remember-me-con,
 #button-con {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     max-width: 200px;
     margin-left: auto;
 }
 
-#remember-me-con input,
+#login-form #remember-me-con input,
 label {
     width: auto;
 }
@@ -96,7 +97,7 @@ label {
     cursor: pointer;
 }
 
-form a {
+#login-form a {
     display: block;
     text-align: center;
     margin-top: 20px;
@@ -115,24 +116,24 @@ form a {
         display: none;
     }
 
-    form {
+    #login-form {
         width: 80vw;
         padding: 30px;
     }
 
-    form div input {
+    #login-form div input {
         height: 50px;
     }
 
-    form div label {
+    #login-form div label {
         font-size: 20px;
     }
 
-    form h2 {
+    #login-form h2 {
         font-size: 30px;
     }
 
-    form a {
+    #login-form a {
         font-size: 20px;
     }
 
@@ -144,16 +145,16 @@ form a {
 @media screen and (max-width: 400px) {
 
 
-    form h2 {
+    #login-form h2 {
         font-size: 25px;
     }
 
-    form {
+    #login-form {
         padding: 15px;
     }
 
-    form div label,
-    form a {
+    #login-form div label,
+    #login-form a {
         font-size: 15px;
     }
 

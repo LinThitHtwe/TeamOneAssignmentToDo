@@ -31,7 +31,7 @@ export default function Login({ validateUserHandler, clearMsg }) {
       </section>
       <section className="right container">
         <form onSubmit={(event) => submitHandler(event)} id="login-form" action="#">
-          <h2>Admin Sign In</h2>
+          <h2>Sign In</h2>
           <div>
             <label htmlFor="email">Email</label>
             <input
