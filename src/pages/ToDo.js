@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import "../styles/todo.css";
 
-const ToDo = () => {
-  const [todoLists, setTodoLists] = useState([]);
+const ToDo = ({ forceUpdate }) => {
   const [isFormEmpty, setIsFormEmpty] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     priority: "",
     todo: "",
   });
+
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const todoLists =
+    JSON.parse(localStorage.getItem(`todoLists-${currentUser?.email}`)) || [];
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -34,7 +38,10 @@ const ToDo = () => {
       todo: formData.todo,
     };
 
-    setTodoLists((prevTodoLists) => [...prevTodoLists, newTodo]);
+    localStorage.setItem(
+      `todoLists-${currentUser.email}`,
+      JSON.stringify([...todoLists, newTodo])
+    );
 
     setFormData({
       name: "",
@@ -46,7 +53,11 @@ const ToDo = () => {
   const handleDelete = (index) => {
     const updatedTodoLists = [...todoLists];
     updatedTodoLists.splice(index, 1);
-    setTodoLists(updatedTodoLists);
+    localStorage.setItem(
+      `todoLists-${currentUser.email}`,
+      JSON.stringify(updatedTodoLists)
+    );
+    forceUpdate();
   };
 
   return (

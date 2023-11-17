@@ -1,6 +1,11 @@
 import React from "react";
 import navbar from "../styles/navbar.css";
-const Navbar = ({ onNavbarClick, activeComponent }) => {
+const Navbar = ({ onNavbarClick, activeComponent, forceUpdate }) => {
+  const handleLogout = () => {
+    localStorage.setItem("currentUser", JSON.stringify(""));
+    forceUpdate();
+  };
+
   return (
     <div className="navbar">
       <div className="navbar-items-container">
@@ -27,6 +32,10 @@ const Navbar = ({ onNavbarClick, activeComponent }) => {
           onClick={() => onNavbarClick("ToDo")}
         >
           ToDo
+        </span>
+
+        <span className="navbar-item " onClick={handleLogout}>
+          Logout
         </span>
       </div>
     </div>
