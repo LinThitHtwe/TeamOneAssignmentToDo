@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #008ae6;
+  height: 10vh;
+  color: #fff;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.navbar-items-container {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.navbar-item {
+  cursor: pointer;
+  padding: 21px;
+}
+
+.navbar-item:hover {
+  background-color: #007acc;
+}
+
+.navbar-item.active {
+  background-color: #006bb3;
+}

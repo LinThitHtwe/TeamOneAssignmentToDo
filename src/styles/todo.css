@@ -1,0 +1,104 @@
+.todo-main-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.todo-left-content {
+  border-right: 1px solid #000;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.todo-right-content {
+  width: 100%;
+  height: 80%;
+}
+
+.todo-form {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 5px 1px 5px;
+}
+
+.input-container input {
+  margin-left: 20px;
+}
+
+.input-container input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #008ae6;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  scale: 1.03;
+}
+
+.todo-lists {
+  list-style: none;
+}
+
+.todo-li {
+  border: 1px solid #222;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.todo-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.no-todo-list {
+  margin-left: 40px;
+}
+
+.right-todo-list {
+  text-align: end;
+}
+
+.todo-delete-btn {
+  background-color: red;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.todo-delete-btn {
+  scale: 1.03;
+}
+
+.todo-error-message {
+  color: red;
+  text-align: center;
+}
