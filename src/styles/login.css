@@ -97,11 +97,18 @@ label {
   cursor: pointer;
 }
 
-#login-form a {
+#login-form .forgot-password {
   display: block;
   text-align: center;
   margin-top: 20px;
   text-decoration: none;
+  color: var(--textColor);
+}
+
+#login-form .signup-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
   color: var(--textColor);
 }
 
