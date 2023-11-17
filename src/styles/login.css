@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+:root {
+    --primary: #0c1f7b;
+    --secondary: #061351;
+    --buttonColor: #4b0eac;
+    --textColor: rgb(197, 197, 197);
+}
+
+/* body {
+    background: var(--primary);
+} */
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    background: #0c1f7b;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+}
+
+.container {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    width: 400px;
+}
+
+#login-form {
+    width: 300px;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    background: var(--secondary);
+    color: var(--textColor);
+}
+
+#login-form h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#login-form div {
+    margin-bottom: 1.5rem;
+}
+
+#login-form div input,
+label {
+    display: block;
+    width: 100%;
+}
+
+#login-form div input {
+    height: 25px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 0.25rem;
+    color: #fff;
+}
+
+#login-form #remember-me-con,
+#button-con {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 200px;
+    margin-left: auto;
+}
+
+#login-form #remember-me-con input,
+label {
+    width: auto;
+}
+
+#remember-me {
+    margin-right: 5px;
+    height: auto;
+}
+
+#button-con button {
+    padding: 10px 20px;
+    color: white;
+    background: var(--buttonColor);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#login-form a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+@media screen and (max-width: 768px) {
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left.container {
+        display: none;
+    }
+
+    #login-form {
+        width: 80vw;
+        padding: 30px;
+    }
+
+    #login-form div input {
+        height: 50px;
+    }
+
+    #login-form div label {
+        font-size: 20px;
+    }
+
+    #login-form h2 {
+        font-size: 30px;
+    }
+
+    #login-form a {
+        font-size: 20px;
+    }
+
+    .image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+
+    #login-form h2 {
+        font-size: 25px;
+    }
+
+    #login-form {
+        padding: 15px;
+    }
+
+    #login-form div label,
+    #login-form a {
+        font-size: 15px;
+    }
+
+    .right.container {
+        width: 100vw;
+    }
+}
