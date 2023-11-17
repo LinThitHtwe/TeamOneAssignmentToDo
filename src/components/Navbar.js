@@ -3,7 +3,8 @@ import navbar from "../styles/navbar.css";
 const Navbar = ({ onNavbarClick, activeComponent, forceUpdate }) => {
   const handleLogout = () => {
     localStorage.setItem("currentUser", JSON.stringify(""));
-    forceUpdate();
+   // forceUpdate();
+    window.location.reload();
   };
 
   return (
