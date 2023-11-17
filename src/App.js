@@ -2,15 +2,16 @@ import "./App.css";
 import Login from "./pages/Login";
 import Factorial from "./pages/Factorial";
 import ToDo from "./pages/ToDo";
-import EvenOdd from './pages/EvenOdd';
+import EvenOdd from "./pages/EvenOdd";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
-
+import Register from "./pages/Register";
 
 function App() {
-  localStorage.setItem(
-    "USER_DB",
-    JSON.stringify([
+  const existingUsers = JSON.parse(localStorage.getItem("USER_DB"));
+
+  if (!existingUsers || existingUsers.length === 0) {
+    const initialUsers = [
       {
         email: "mario@gmail.com",
         password: "mario",
@@ -23,10 +24,14 @@ function App() {
         email: "bunbun@gmail.com",
         password: "bunbun",
       },
-    ])
-  );
+    ];
+
+    localStorage.setItem("USER_DB", JSON.stringify(initialUsers));
+  }
 
   const [isValid, setValid] = useState(null);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(true);
 
   const validateUserHandler = (email, password) => {
     const users = JSON.parse(localStorage.getItem("USER_DB"));
@@ -61,12 +66,22 @@ function App() {
   };
 
   return (
-
-    
-
     <>
-      {!isValid && (
-        <Login validateUserHandler={validateUserHandler} clearMsg={clearMsg} />
+      {!isValid && !isRegisterOpen && isLoginOpen && (
+        <Login
+          validateUserHandler={validateUserHandler}
+          clearMsg={clearMsg}
+          setIsRegisterOpen={setIsRegisterOpen}
+          setIsLoginOpen={setIsLoginOpen}
+        />
+      )}
+      {isRegisterOpen && (
+        <Register
+          validateUserHandler={validateUserHandler}
+          clearMsg={clearMsg}
+          setIsRegisterOpen={setIsRegisterOpen}
+          setIsLoginOpen={setIsLoginOpen}
+        />
       )}
       {isValid === false && (
         <p
@@ -93,10 +108,9 @@ function App() {
       />
       {activeComponent === "ToDo" && <ToDo />}
       {activeComponent === "Factorial" && <Factorial />}
-       {activeComponent === "EvenOdd" &&   <EvenOdd/>}
+      {activeComponent === "EvenOdd" && <EvenOdd />}
     </>
   );
-  
 }
 
 export default App;

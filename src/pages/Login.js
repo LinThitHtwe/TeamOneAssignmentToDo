@@ -1,7 +1,12 @@
 import { useState } from "react";
 import "../styles/login.css";
 
-export default function Login({ validateUserHandler, clearMsg }) {
+export default function Login({
+  validateUserHandler,
+  clearMsg,
+  setIsRegisterOpen,
+  setIsLoginOpen,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,7 +35,11 @@ export default function Login({ validateUserHandler, clearMsg }) {
         />
       </section>
       <section className="right container">
-        <form onSubmit={(event) => submitHandler(event)} id="login-form" action="#">
+        <form
+          onSubmit={(event) => submitHandler(event)}
+          id="login-form"
+          action="#"
+        >
           <h2>Sign In</h2>
           <div>
             <label htmlFor="email">Email</label>
@@ -57,8 +66,18 @@ export default function Login({ validateUserHandler, clearMsg }) {
           <div id="button-con">
             <button type="submit">Login</button>
           </div>
-          <a href="#" id="forgot-password">
+          <a href="#" className="forgot-password">
             Forgot password
+          </a>
+          <a
+            href="#"
+            className="signup-link"
+            onClick={() => {
+              setIsRegisterOpen(true);
+              setIsLoginOpen(false);
+            }}
+          >
+            Sign Up
           </a>
         </form>
       </section>
