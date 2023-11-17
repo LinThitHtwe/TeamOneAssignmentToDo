@@ -7,9 +7,15 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 import Register from "./pages/Register";
 
+const useForceUpdate = () => {
+  const [value, setValue] = useState(0);
+  return () => setValue((prevValue) => prevValue + 1);
+};
+
 function App() {
   const existingUsers = JSON.parse(localStorage.getItem("USER_DB"));
-
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const forceUpdate = useForceUpdate();
   if (!existingUsers || existingUsers.length === 0) {
     const initialUsers = [
       {
@@ -67,7 +73,7 @@ function App() {
 
   return (
     <>
-      {!isValid && !isRegisterOpen && isLoginOpen && (
+      {!isValid && !isRegisterOpen && isLoginOpen && !currentUser && (
         <Login
           validateUserHandler={validateUserHandler}
           clearMsg={clearMsg}
@@ -75,7 +81,7 @@ function App() {
           setIsLoginOpen={setIsLoginOpen}
         />
       )}
-      {isRegisterOpen && (
+      {isRegisterOpen && !currentUser && (
         <Register
           validateUserHandler={validateUserHandler}
           clearMsg={clearMsg}
@@ -105,8 +111,9 @@ function App() {
       <Navbar
         onNavbarClick={handleNavbarClick}
         activeComponent={activeComponent}
+        forceUpdate={forceUpdate}
       />
-      {activeComponent === "ToDo" && <ToDo />}
+      {activeComponent === "ToDo" && <ToDo forceUpdate={forceUpdate} />}
       {activeComponent === "Factorial" && <Factorial />}
       {activeComponent === "EvenOdd" && <EvenOdd />}
     </>
